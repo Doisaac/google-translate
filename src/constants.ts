@@ -4,4 +4,4 @@ export const SUPPORTED_LANGUAGES = {
   uk: "Ukrainian",
 }
 
-export const AUTO_LANGUAGE = "AUTO"
+export const AUTO_LANGUAGE = "auto"
