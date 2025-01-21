@@ -1,9 +1,22 @@
+import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
+import { useStore } from "./hooks/useStore"
 
 function App() {
+  const { fromLanguage, setFromLanguage } = useStore()
   return (
     <>
-      <div className="App"></div>
+      <div className="App">
+        <h1>Hey there!</h1>
+        <button
+          onClick={() => {
+            setFromLanguage("es")
+          }}
+        >
+          Change to Spanish {""}
+          {fromLanguage}
+        </button>
+      </div>
     </>
   )
 }
