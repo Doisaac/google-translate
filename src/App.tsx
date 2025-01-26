@@ -7,6 +7,7 @@ import { ArrowsIcon, ClipboardIcon, SpeakerIcon } from "./components/Icons"
 import { LanguageSelector } from "./components/LanguageSelector"
 import { SectionType } from "./types.d"
 import { TextArea } from "./components/TextArea"
+import { useEffect } from "react"
 
 function App() {
   const {
@@ -21,6 +22,20 @@ function App() {
     setFromText,
     setResult,
   } = useStore()
+
+  useEffect(() => {
+    if (fromText === "") return
+
+    // Here is be the logic to translate the text
+    // translate({ fromLanguage, toLanguage, text: fromText })
+    //   .then((result) => {
+    //     if (result == null) return
+    //     setResult(result)
+    //   })
+    //   .catch((error) => {
+    //     console.error(error)
+    //   })
+  }, [fromText, fromLanguage, toLanguage])
 
   const handleClipboard = () => {
     navigator.clipboard.writeText(result)
